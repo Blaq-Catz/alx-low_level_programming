@@ -1,25 +1,31 @@
 /**
+ * reverse_array - a function that reverses the
+ *                content of an array of integers
  *
- *  * _strcmp - a function that compares two strings
+ * @a: pointer to int array
+ * @n: is the number of elements to swap
  *
- *   *
- *
- *    * @s1: string 1 input to compare
- *
- *     * @s2: against this other string 2
- *
- *      *
- *
- *       * Return: 0 if s1 and s2 are equal
- *
- *        *        negative integer if the stopping character
- *
- *         *                in @s1 was less than the stopping
- *
- *          *                character in @s2
- *
- *           *        positive integer if the stopping character
- *
- *            *                in @s1 was greater than the stopping
- *
- *             *                character in @s2
+ * Return: nothing
+*/
+
+void reverse_array(int *a, int n)
+{
+	int temp, s, e;
+
+	s = 0;
+	e = n - 1;
+	/**
+	 * set value in array a in temp
+	 * then place the last array in
+	 * the first array then place
+	 * value in temp to last array
+	*/
+	while (s < e)
+	{
+		temp = a[s];
+		a[s] = a[e];
+		a[e] = temp;
+		s++;
+		e--;
+	}
+}
