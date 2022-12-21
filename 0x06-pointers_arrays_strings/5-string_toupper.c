@@ -1,25 +1,22 @@
 /**
+ * string_toupper - a function that changes all
+ *             lowercase letters of a string
+ *             to uppercase.
  *
- *  * _strcmp - a function that compares two strings
+ * @s : pointer to input char
  *
- *   *
- *
- *    * @s1: string 1 input to compare
- *
- *     * @s2: against this other string 2
- *
- *      *
- *
- *       * Return: 0 if s1 and s2 are equal
- *
- *        *        negative integer if the stopping character
- *
- *         *                in @s1 was less than the stopping
- *
- *          *                character in @s2
- *
- *           *        positive integer if the stopping character
- *
- *            *                in @s1 was greater than the stopping
- *
- *             *                character in @s2
+ * Return: @s
+*/
+
+char *string_toupper(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		if (s[i] >= 97 && s[i] <= 122)
+			s[i] = s[i] - 32;
+		i++;
+	}
+	return (s);
+}
