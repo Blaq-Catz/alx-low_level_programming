@@ -1,63 +1,35 @@
 /**
+ * _strspn - a function that gets the
+ *           length of a prexif substring
  *
- *  * _memset - a function that fills
+ * @s: pointer to string input
+ * @accept: substring prefix to look for
  *
- *   *         memory with a constant byte
- *
- *    *
- *
- *     * @s: input pointer to char type
- *
- *      *    represents the pointer to the
- *
- *       *    block of memory to fill
- *
- *        * @b: input variable of char type
- *
- *         *    represents the character to
- *
- *          *    fill s
- *
- *           * @n: unsigned int variable
- *
- *            *    the number of bytes to be filled
- *
- *             *
- *
- *              * Return: A pointer to the filled memory
- *
- *               *         area @s
- *
- *               */
+ * Return: the number of bytes in the initial segment
+*/
 
-
-
-char *_memset(char *s, char b, unsigned int n)
-
+unsigned int _strspn(char *s, char *accept)
 {
+	int i, j, f;
 
-		/**
-		 *
-		 * 	 * declare an unsigned int
-		 *
-		 * 	 	 * because we are storing a
-		 *
-		 * 	 	 	 * value that will always be
-		 *
-		 * 	 	 	 	 * non-negative (zero or positive)
-		 *
-		 * 	 	 	 	 	*/
+	i = 0;
+	while (s[i] != '\0')
+	{
+		j = 0;
+		f = 1; /*flag status*/
+		while (accept[j] != '\0')
+		{
+			if (s[i] == accept[j])
+			{
+				f = 0; /*success*/
+				break;
+			}
+			j++;
+		}
+		if (f == 1)
+			break;
+		i++;
+	}
 
-		unsigned int i;
-
-
-
-			for (i = 0; i < n; i++)
-
-						s[i] = b;
-
-
-
-				return (s);
-
+	return (i);
 }
