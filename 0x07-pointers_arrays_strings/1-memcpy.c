@@ -1,63 +1,18 @@
 /**
+ * _memcpy - function that copies memory area
  *
- *  * _memset - a function that fills
+ * @dest: buffer where we will copy to
+ * @src: what we are to copy
+ * @n: n bytes of @src
  *
- *   *         memory with a constant byte
- *
- *    *
- *
- *     * @s: input pointer to char type
- *
- *      *    represents the pointer to the
- *
- *       *    block of memory to fill
- *
- *        * @b: input variable of char type
- *
- *         *    represents the character to
- *
- *          *    fill s
- *
- *           * @n: unsigned int variable
- *
- *            *    the number of bytes to be filled
- *
- *             *
- *
- *              * Return: A pointer to the filled memory
- *
- *               *         area @s
- *
- *               */
+ * Return: Always 0 (Success)
+*/
 
-
-
-char *_memset(char *s, char b, unsigned int n)
-
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
+	unsigned int i;
 
-		/**
-		 *
-		 * 	 * declare an unsigned int
-		 *
-		 * 	 	 * because we are storing a
-		 *
-		 * 	 	 	 * value that will always be
-		 *
-		 * 	 	 	 	 * non-negative (zero or positive)
-		 *
-		 * 	 	 	 	 	*/
-
-		unsigned int i;
-
-
-
-			for (i = 0; i < n; i++)
-
-						s[i] = b;
-
-
-
-				return (s);
-
+	for (i = 0; i < n; i++)
+		dest[i] = src[i];
+	return (dest);
 }
