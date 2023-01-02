@@ -1,63 +1,36 @@
+#include "main.h"
+
 /**
- *
- *  * _memset - a function that fills
- *
- *   *         memory with a constant byte
- *
- *    *
- *
- *     * @s: input pointer to char type
- *
- *      *    represents the pointer to the
- *
- *       *    block of memory to fill
- *
- *        * @b: input variable of char type
- *
- *         *    represents the character to
- *
- *          *    fill s
- *
- *           * @n: unsigned int variable
- *
- *            *    the number of bytes to be filled
- *
- *             *
- *
- *              * Return: A pointer to the filled memory
- *
- *               *         area @s
- *
- *               */
-
-
-
-char *_memset(char *s, char b, unsigned int n)
-
+ * print_chessboard - print the chessboard, 2d array
+ * @a: 2d array of chars
+ * Return: void
+ */
+void print_chessboard(char (*a)[8])
 {
-
-		/**
-		 *
-		 * 	 * declare an unsigned int
-		 *
-		 * 	 	 * because we are storing a
-		 *
-		 * 	 	 	 * value that will always be
-		 *
-		 * 	 	 	 	 * non-negative (zero or positive)
-		 *
-		 * 	 	 	 	 	*/
-
-		unsigned int i;
+	/*variables*/
+	int n, j;
 
 
 
-			for (i = 0; i < n; i++)
+	n = 0;
 
-						s[i] = b;
+	while (n < 8) /*repeat number*/
 
+	{
 
+		j = 0;
 
-				return (s);
+		while (j < 8)
 
+		{
+
+			_putchar (a[n][j]);
+
+			j++;
+
+		}
+
+		_putchar ('\n'); /*print new line*/
+		n++;
+	}
 }
