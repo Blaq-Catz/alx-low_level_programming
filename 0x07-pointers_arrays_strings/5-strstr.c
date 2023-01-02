@@ -1,63 +1,36 @@
 /**
+ * _strstr - a function that locates a substring
  *
- *  * _memset - a function that fills
+ * @haystack: input string to search for matching
+ *            substrings
+ * @needle: subtring to search for
  *
- *   *         memory with a constant byte
- *
- *    *
- *
- *     * @s: input pointer to char type
- *
- *      *    represents the pointer to the
- *
- *       *    block of memory to fill
- *
- *        * @b: input variable of char type
- *
- *         *    represents the character to
- *
- *          *    fill s
- *
- *           * @n: unsigned int variable
- *
- *            *    the number of bytes to be filled
- *
- *             *
- *
- *              * Return: A pointer to the filled memory
- *
- *               *         area @s
- *
- *               */
+ * Return: a pointer to the beginning
+ *         of the located substring or
+ *         NULL if substring is not found
+*/
 
-
-
-char *_memset(char *s, char b, unsigned int n)
-
+char *_strstr(char *haystack, char *needle)
 {
+	/**
+	 * we initialize a helping variable
+	 * to assist in returning one of
+	 * our parameters pointers haystack
+	*/
+	char *h, *n;
 
-		/**
-		 *
-		 * 	 * declare an unsigned int
-		 *
-		 * 	 	 * because we are storing a
-		 *
-		 * 	 	 	 * value that will always be
-		 *
-		 * 	 	 	 	 * non-negative (zero or positive)
-		 *
-		 * 	 	 	 	 	*/
-
-		unsigned int i;
-
-
-
-			for (i = 0; i < n; i++)
-
-						s[i] = b;
-
-
-
-				return (s);
-
+	while (*haystack != '\0')
+	{
+		h = haystack;
+		n = needle;
+		while (*n != '\0' && *haystack == *n)
+		{
+			haystack++;
+			n++;
+		}
+		if (!*n)
+			return (h);
+		haystack++;
+	}
+	return ('\0');
 }
