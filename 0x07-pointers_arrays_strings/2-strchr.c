@@ -1,63 +1,27 @@
 /**
+ * _strchr - a function that locates a character in a string
  *
- *  * _memset - a function that fills
+ * @s: pointer to our string array input
+ * @c: character to locate from input array
  *
- *   *         memory with a constant byte
- *
- *    *
- *
- *     * @s: input pointer to char type
- *
- *      *    represents the pointer to the
- *
- *       *    block of memory to fill
- *
- *        * @b: input variable of char type
- *
- *         *    represents the character to
- *
- *          *    fill s
- *
- *           * @n: unsigned int variable
- *
- *            *    the number of bytes to be filled
- *
- *             *
- *
- *              * Return: A pointer to the filled memory
- *
- *               *         area @s
- *
- *               */
+ * Return: first occurence of charatcer or null if not found
+*/
 
-
-
-char *_memset(char *s, char b, unsigned int n)
-
+char *_strchr(char *s, char c)
 {
-
-		/**
-		 *
-		 * 	 * declare an unsigned int
-		 *
-		 * 	 	 * because we are storing a
-		 *
-		 * 	 	 	 * value that will always be
-		 *
-		 * 	 	 	 	 * non-negative (zero or positive)
-		 *
-		 * 	 	 	 	 	*/
-
-		unsigned int i;
-
-
-
-			for (i = 0; i < n; i++)
-
-						s[i] = b;
-
-
-
-				return (s);
-
+	while (*s != '\0')
+	{
+		if (*s == c)
+			return (s);
+		s++;
+	}
+	/**
+	 * if c is '\0', you should return
+	 * the pointer to the '\0' of the
+	 * string s
+	*/
+	if (*s == c)
+		return (s);
+	/*return null if not found*/
+	return ('\0');
 }
