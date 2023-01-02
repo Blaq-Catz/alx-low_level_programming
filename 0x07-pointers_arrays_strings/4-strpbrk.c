@@ -1,63 +1,30 @@
 /**
+ * _strpbrk - a function that searches a
+ *            string for any of a set of bytes.
  *
- *  * _memset - a function that fills
+ * @s: pointer to input string
+ * @accept: pointer to string we
+ *         searching for in @s
  *
- *   *         memory with a constant byte
- *
- *    *
- *
- *     * @s: input pointer to char type
- *
- *      *    represents the pointer to the
- *
- *       *    block of memory to fill
- *
- *        * @b: input variable of char type
- *
- *         *    represents the character to
- *
- *          *    fill s
- *
- *           * @n: unsigned int variable
- *
- *            *    the number of bytes to be filled
- *
- *             *
- *
- *              * Return: A pointer to the filled memory
- *
- *               *         area @s
- *
- *               */
+ * Return: pointer to the bytes in @s
+ *         or NULL if no such byte is found
+*/
 
-
-
-char *_memset(char *s, char b, unsigned int n)
-
+char *_strpbrk(char *s, char *accept)
 {
+	int i, j;
 
-		/**
-		 *
-		 * 	 * declare an unsigned int
-		 *
-		 * 	 	 * because we are storing a
-		 *
-		 * 	 	 	 * value that will always be
-		 *
-		 * 	 	 	 	 * non-negative (zero or positive)
-		 *
-		 * 	 	 	 	 	*/
-
-		unsigned int i;
-
-
-
-			for (i = 0; i < n; i++)
-
-						s[i] = b;
-
-
-
-				return (s);
-
+	i = 0;
+	while (s[i] != '\0')
+	{
+		j = 0;
+		while (accept[j] != '\0')
+		{
+			if (s[i] == accept[j])
+				return (s + i);
+			j++;
+		}
+		i++;
+	}
+	return ('\0');
 }
