@@ -1,39 +1,15 @@
 #include "main.h"
 
-
-
 /**
- *
- *  * _puts_recursion - prints a string, followed by a new line.
- *
- *   * @s: string
- *
- *    * Return: no return.
- *
- *     */
+ * _strlen_recursion - returns the length of a string.
+ * @s: string
+ * Return: the length of a string.
+ */
 
-
-
-void _puts_recursion(char *s)
-
+int _strlen_recursion(char *s)
 {
-
-		if (*s != '\0')
-
-				{
-
-						_putchar(*s);
-
-							_puts_recursion(s + 1);
-
-								}
-
-			else
-
-					_putchar('\n');
-
+	if (*s == '\0')
+	return (0);
+	else
+	return (1 + _strlen_recursion(s + 1));
 }
-
-Footer
-
-© 2023 GitHub, Inc.
