@@ -1,39 +1,37 @@
 #include "main.h"
 
-
-
 /**
- *
- *  * _puts_recursion - prints a string, followed by a new line.
- *
- *   * @s: string
- *
- *    * Return: no return.
- *
- *     */
+ * power_operation - returns the natural square root of a number.
+ * @n: input number.
+ * @c: iterator.
+ * Return: square root or -1.
+ */
 
-
-
-void _puts_recursion(char *s)
-
+int power_operation(int n, int c)
 {
-
-		if (*s != '\0')
-
-				{
-
-						_putchar(*s);
-
-							_puts_recursion(s + 1);
-
-								}
-
-			else
-
-					_putchar('\n');
-
+	if (c % (n / c) == 0)
+	{
+	if (c * (n / c) == n)
+	return (c);
+	else
+	return (-1);
+	}
+	return (0 + power_operation(n, c + 1));
 }
 
-Footer
+/**
+ * _sqrt_recursion - returns the natural square root of a number.
+ * @n: input number.
+ * Return: natural square root.
+ */
 
-© 2023 GitHub, Inc.
+int _sqrt_recursion(int n)
+{
+	if (n < 0)
+	return (-1);
+	if (n == 0)
+	return (0);
+	if (n == 1)
+	return (1);
+	return (power_operation(n, 2));
+}
