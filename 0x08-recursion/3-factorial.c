@@ -1,39 +1,16 @@
 #include "main.h"
 
-
-
 /**
- *
- *  * _puts_recursion - prints a string, followed by a new line.
- *
- *   * @s: string
- *
- *    * Return: no return.
- *
- *     */
-
-
-
-void _puts_recursion(char *s)
-
+ * factorial - returns the factorial of a given number.
+ * @n: input number.
+ * Return: factorial of the number.
+ */
+int factorial(int n)
 {
-
-		if (*s != '\0')
-
-				{
-
-						_putchar(*s);
-
-							_puts_recursion(s + 1);
-
-								}
-
-			else
-
-					_putchar('\n');
-
+	if (n < 0)
+	return (-1);
+	else if (n == 0)
+	return (1);
+	else
+	return (n * factorial(n - 1));
 }
-
-Footer
-
-© 2023 GitHub, Inc.
