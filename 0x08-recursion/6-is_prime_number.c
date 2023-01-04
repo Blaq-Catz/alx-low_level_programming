@@ -1,39 +1,37 @@
 #include "main.h"
 
-
-
 /**
- *
- *  * _puts_recursion - prints a string, followed by a new line.
- *
- *   * @s: string
- *
- *    * Return: no return.
- *
- *     */
+ * is_prime - detects if an input number is a prime number.
+ * @n: input number.
+ * @c: iterator.
+ * Return: 1 if n is a prime number. 0 if n is not a prime number.
+ */
 
-
-
-void _puts_recursion(char *s)
-
+int is_prime(unsigned int n, unsigned int c)
 {
-
-		if (*s != '\0')
-
-				{
-
-						_putchar(*s);
-
-							_puts_recursion(s + 1);
-
-								}
-
-			else
-
-					_putchar('\n');
-
+	if (n % c == 0)
+	{
+	if (n == c)
+	return (1);
+	else
+	return (0);
+	}
+	return (0 + is_prime(n, c + 1));
 }
 
-Footer
+/**
+ * is_prime_number - detects if an input number is a prime number.
+ * @n: input number.
+ * Return: 1 if n is a prime number. 0 if n is not a prime number.
+ */
 
-© 2023 GitHub, Inc.
+int is_prime_number(int n)
+{
+	if (n == 0)
+		return (0);
+	if (n < 0)
+		return (0);
+	if (n == 1)
+		return (0);
+	return (is_prime(n, 2));
+}
