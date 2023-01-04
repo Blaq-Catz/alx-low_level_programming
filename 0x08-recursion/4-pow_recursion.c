@@ -1,39 +1,18 @@
 #include "main.h"
 
-
-
 /**
- *
- *  * _puts_recursion - prints a string, followed by a new line.
- *
- *   * @s: string
- *
- *    * Return: no return.
- *
- *     */
+ * _pow_recursion - returns the value of x raised to the power of y.
+ * @x: base.
+ * @y: exponent.
+ * Return: value of the exponentiation.
+ */
 
-
-
-void _puts_recursion(char *s)
-
+int _pow_recursion(int x, int y)
 {
-
-		if (*s != '\0')
-
-				{
-
-						_putchar(*s);
-
-							_puts_recursion(s + 1);
-
-								}
-
-			else
-
-					_putchar('\n');
-
+	if (y < 0)
+	return (-1);
+	else if (y == 0)
+	return (1);
+	else
+	return (x * _pow_recursion(x, y - 1));
 }
-
-Footer
-
-© 2023 GitHub, Inc.
