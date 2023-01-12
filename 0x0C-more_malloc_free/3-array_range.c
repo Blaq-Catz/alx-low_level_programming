@@ -1,67 +1,30 @@
-i#include <stdlib.h>
-
-#include "main.h"
-
-
+#include <stdlib.h>
 
 /**
+ * array_range - creates an array of integers
  *
- *  * *create_array - creates an array of chars,
+ * @min: min number of elements
+ * @max: max number of elements
  *
- *   * and initializes it with a specific char
- *
- *    * @size: size of the array to create
- *
- *     * @c: char to initialize the array c
- *
- *      *
- *
- *       * Return: pointer to the array (Success), NULL (Error)
- *
- *        */
+ * Return: array pointer address
+ *         NULL if it fails
+*/
 
-char *create_array(unsigned int size, char c)
-
+int *array_range(int min, int max)
 {
+	int i, *array;
 
-		char *p;
+	if (min > max)
+		return (NULL);
 
-			unsigned int i = 0;
+	array = malloc((max - min + 1) * sizeof(int));
+	if (array == NULL)
+		return (NULL);
 
-
-
-				if (size == 0)
-
-							return (NULL);
-
-
-
-					p = (char *) malloc(sizeof(char) * size);
-
-
-
-						if (p == NULL)
-
-									return (0);
-
-
-
-							while (i < size)
-
-									{
-
-												*(p + i) = c;
-
-														i++;
-
-															}
-
-
-
-								*(p + i) = '\0';
-
-
-
-									return (p);
-
+	for (i = 0; min <= max; i++)
+	{
+		array[i] = min;
+		min++;
+	}
+	return (array);
 }
