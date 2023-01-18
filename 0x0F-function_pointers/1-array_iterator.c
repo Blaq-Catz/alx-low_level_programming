@@ -1,27 +1,21 @@
+#include <stddef.h>
+
 /**
+ * array_iterator - a function that executes a given function
+ *                  as a parameter on each element of an array
  *
- *  * print_name - function to print name
+ * @array: array to iterate
+ * @size: size of array
+ * @action: pointer to function to call
  *
- *   *
- *
- *    * @name: name to print
- *
- *     * @f: function pointer that doesn't return anything
- *
- *      *
- *
- *       * Return: Always 0 (Success)
- *
- *       */
+ * Return: empty if @array and @action is NULL
+*/
 
-
-
-void print_name(char *name, void (*f)(char *))
-
+void array_iterator(int *array, size_t size, void (*action)(int))
 {
+	unsigned int index;
 
-		if (name && f)
-
-					f(name);
-
+	if (array != NULL && size > 0 && action != NULL)
+		for (index = 0; index < size; index++)
+			action(array[index]);
 }
