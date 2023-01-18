@@ -1,27 +1,35 @@
+#include <stddef.h>
+#include "function_pointers.h"
+
 /**
+ * int_index - a function that searches for an integer
  *
- *  * print_name - function to print name
+ * @array: pointer to array
+ * @size: size of @array
+ * @cmp: pointer to function call to check index in array
+ *       if it matches
  *
- *   *
- *
- *    * @name: name to print
- *
- *     * @f: function pointer that doesn't return anything
- *
- *      *
- *
- *       * Return: Always 0 (Success)
- *
- *       */
+ * Return: Always 0 (Success)
+*/
 
-
-
-void print_name(char *name, void (*f)(char *))
-
+int int_index(int *array, int size, int (*cmp)(int))
 {
+	int index;
+	bool y;
 
-		if (name && f)
+	if (array != NULL && size > 0 && cmp != NULL)
+	{
+		if (size <= 0)
+			return (-1);
 
-					f(name);
+		for (index = 0; index < size; index++)
+		{
+			y = cmp(array[index]);
+			if (y == TRUE)
+				return (index);
+		}
+	}
+
+	return (-1);
 
 }
