@@ -1,33 +1,36 @@
 #include <stdarg.h>
-
-
+#include <stdio.h>
 
 /**
+ * print_strings - a function that prints strings, followed by a new line
  *
- *  * sum_them_all - adds all its parameters
+ * @separator: pointer to a constant separator
+ * @n: start of input variables
  *
- *   *
- *
- *    * @n: start of input variables
- *
- *     *
- *
- *      * Return: the sum
- *
- *      */
+ * Return: nothing
+*/
 
-
-
-int sum_them_all(const unsigned int n, ...)
-
+void print_strings(const char *separator, const unsigned int n, ...)
 {
+	va_list ap;
+	unsigned int index;
+	char *str;
 
-		va_list ap;
+	/* iterate the argument list from the start */
+	va_start(ap, n);
 
-			unsigned int param, sum = 0;
+	for (index = 0; index < n; index++)
+	{
+		str = va_arg(ap, char *);
+		if (str)
+			printf("%s", str);
+		else
+			printf("(nil)");
 
-
-
-				/* initialize the argument list from the start */
-
-				va_start(ap, n);
+		if (separator && index != n - 1)
+			printf("%s", separator);
+	}
+	/*clean up*/
+	va_end(ap);
+	printf("\n");
+}
