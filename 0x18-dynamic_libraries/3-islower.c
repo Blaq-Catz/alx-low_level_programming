@@ -1,30 +1,22 @@
 #include "main.h"
+
 /**
- *_strncpy - copies a string
- *@dest: A pointer to a character that will be changed
- *@src: A pointer to a character that will be changed
- *@n: value
- *Return: dest
+ * _islower - Short description, single line
+ * @c: contains value to be compared
+ * Return: Always 0.
  */
-
-char *_strncpy(char *dest, char *src, int n)
+int _islower(int c)
 
 {
-int i;
 
-i = 0;
-while (i < n && src[i] != '\0')
-{
-dest[i] = src[i];
-i++;
-}
+	if (c > 'a' && c < 'z')
+	{
+		return (1);
+	}
 
-while (i < n)
-{
-dest[i] = '\0';
-i++;
-}
-
-return (dest);
+	else
+	{
+		return (0);
+	}
 
 }
